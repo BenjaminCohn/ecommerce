@@ -5,15 +5,24 @@ import InputField from '../InputField/InputField';
 import PasswordField from '../PasswordField/PasswordField';
 import SubmitButton from '../SubmitButton/SubmitButton';
 import ErrorForm from '../ErrorForm/ErrorForm';
+import InputRadioField from '../InputRadioField/InputRadioField';
+import InpuCheckBoxField from '../InpuCheckboxField/InpuCheckboxField'
 
 export default class Register extends Component{
   constructor(props){
     super(props)
-    this.state = {}
+    this.state = {gender: 'male', music: true}
     this.title = React.createRef()
   }
 
   handleChange(event){
+   
+    if(event.target.type === "checkbox"){
+      console.log(event.target.checked);
+      this.setState({...this.state,[event.target.name]: event.target.checked })
+      console.log(this.state);
+      return
+    }
     this.setState({...this.state,[event.target.name]: event.target.value })
     console.log(this.state);
   }
@@ -24,14 +33,12 @@ export default class Register extends Component{
 
       <h2 ref={this.title}
       >Inscription</h2>
-      <div className="form-row flex gap-10">
-          <input type="text" 
-          className="flex-1"  
-          name="firstname" 
-          placeholder="data ..." 
-          onChange= {this.handleChange.bind(this)}
-          />
-      </div>
+      <InputRadioField
+        handleChange={this.handleChange.bind(this)}
+      />
+      <InpuCheckBoxField 
+        handleChange={this.handleChange.bind(this)}
+      />
       <InputField 
       type="text" 
       name="firstname" 
