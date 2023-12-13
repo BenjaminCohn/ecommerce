@@ -1,0 +1,62 @@
+.login{
+    width: 100%;
+    height: 100vh;
+    /*background-image: url("/images/1.png");*/
+    background-size: cover;
+}
+form{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    transform: translate(-50%,-50%);
+    background-color: white;
+    padding: 10px;
+    box-shadow: 2px 8px 12px rgb(0 0 0 /20%);
+}
+form h2{
+    text-align: center;
+    text-transform: uppercase;
+    color: teal;
+}
+.form-row{
+    margin: 10px 0;
+}
+.form-row input{
+    height: 40px;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    padding: 0 10px;
+}
+.form-row button{
+    color: white;
+    background-color: teal;
+    border: none;
+    height: 40px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.form-row i{
+    right: 10px;
+    top: 10px;
+    color: gray;
+}
+.form-row .form-info{
+    font-size: 0.6rem;
+    text-align: center;
+}
+.form-row .form-info a{
+    text-decoration: none;
+    color: teal;
+}
+form .error{
+    font-size: 0.6rem;
+    color: red;
+    display: none;
+}
+@media screen and (max-width: 550px) {
+    form{
+        width: 90%;
+    }
+}
