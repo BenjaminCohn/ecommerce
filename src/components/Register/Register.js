@@ -7,11 +7,12 @@ import SubmitButton from '../SubmitButton/SubmitButton';
 import ErrorForm from '../ErrorForm/ErrorForm';
 import InputRadioField from '../InputRadioField/InputRadioField';
 import InpuCheckBoxField from '../InpuCheckboxField/InpuCheckboxField'
+import SelectField from '../SelectField/SelectField';
 
 export default class Register extends Component{
   constructor(props){
     super(props)
-    this.state = {gender: 'male', music: true}
+    this.state = {gender: 'male', music: true, country: "france"}
     this.title = React.createRef()
   }
 
@@ -37,6 +38,10 @@ export default class Register extends Component{
         handleChange={this.handleChange.bind(this)}
       />
       <InpuCheckBoxField 
+        handleChange={this.handleChange.bind(this)}
+      />
+      <SelectField 
+        country = {["france"]}
         handleChange={this.handleChange.bind(this)}
       />
       <InputField 
