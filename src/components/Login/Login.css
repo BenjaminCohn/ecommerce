@@ -53,7 +53,6 @@ form h2{
 form .error{
     font-size: 0.6rem;
     color: red;
-    display: none;
 }
 @media screen and (max-width: 550px) {
     form{

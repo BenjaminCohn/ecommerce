@@ -4,12 +4,10 @@ import './SelectField.css';
 
 const SelectField = ({country, handleChange}) => (
   <div className="SelectField">
-    <select name="country" onChange={handleChange}>
+    <select name="country" onChange={handleChange} defaultValue={country[1]}>
       {
         country.map((elt, index) =>{
-          if(index === 1){
-          return <option selected={true} value={elt} key={index}>{elt}</option>
-          }
+          
           return <option value={elt} key={index}>{elt}</option>
         })
       }
